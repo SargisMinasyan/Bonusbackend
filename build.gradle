@@ -1,0 +1,38 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.8.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.44'
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '2.1.2.RELEASE'
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile 'org.springframework.security:spring-security-core:4.2.3.RELEASE'
+	compile 'org.springframework.security:spring-security-web:4.2.3.RELEASE'
+	compile 'org.springframework.security:spring-security-config:4.2.3.RELEASE'
+//	compile 'org.springframework.security:spring-security-jwt:1.0.8.RELEASE'
+
+}
